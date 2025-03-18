@@ -1,0 +1,193 @@
+git{
+	"info": {
+		"_postman_id": "d28c75f7-523b-498e-9268-46b23944662d",
+		"name": "API Clinique Vétérinaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33050526"
+	},
+	"item": [
+		{
+			"name": "Login - Obtenir Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"example+1@email.com\",\n\"password\": \"mdp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login - Obtenir Token Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"example+1@email.com\",\n\"password\": \"mdp\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inscription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"example+2@email.com\",\n    \"plainPassword\": \"mdp\",\n    \"firstName\": \"Directeur\",\n    \"lastName\": \"bob\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Créer un assistant",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDIzMTA3OTYsImV4cCI6MTc0MjMxNDM5Niwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZXhhbXBsZSsxQGVtYWlsLmNvbSJ9.TDK0RoSSnbUarJRtRa7CXJpX5VaU0-_Amlw83ttOQuZSJMR8g9BET-Qv6Ker95kzUUwmrakxAklu-q01gcsPvEZtdJwWs5Rqe9mgL6J_9cvTAl5LbRl_gzBLPhannJEVkOhVEEj8iHY7ZA9QMVnzdqrgjAAWWGISxynwBdeAahM2_m6hyha0iEvj7ZA5cdrqNe10FeILXIJxfqQ5MS-Ih_gcK4ZFTdUkVF_Cfqb4kgQRIdwsDRnrjgAfGrm04apkdwrj9g1c2LSgo_z9tX_GqsxQBfaaGEA0BYQ1arTPxBPt3wD_nznEMO_ELowTP_lIt99IjJUpP_pAn2nfG2vjP6hA-gewNJvG0IrUpV3fcRrMqfflY9BelVI9pQ2uwYWfW0120N2H8yQDGe6G8JnTsIfIl0skiaS6fE6tIjJjXRd2KJmQjbtXV7p3RU-kXT243Mx2eRKBJg-CbinIs9mdI6EMNnvyy8MeeBwxG8oyy8-4NywzolEzPrkPZmtg8eWLH7bFY9G66PdYSe3bx2z8wAtsTJFE10EQE35UCuz6oxV-lP5oHs0_jw8QX4KnTjaQb9-65IeH8v_L4jOK4XULGcN1QgHp8pF0bO5pIb6UE1iZ9KM8H6HuoW22WcbFD3WtdWHVGQd5mTik7Dare_5Dg2jw1DvhbalsrjVeDfx9DOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"assistant+1@clinique.fr\",\n  \"plainPassword\": \"password123\",\n  \"roles\": [\"ROLE_ASSISTANT\"],\n  \"firstName\": \"Marie\",\n  \"lastName\": \"Dubois\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "créer un animal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NDIzMTE3NzQsImV4cCI6MTc0MjMxNTM3NCwicm9sZXMiOlsiUk9MRV9BU1NJU1RBTlQiLCJST0xFX1VTRVIiXSwidXNlcm5hbWUiOiJhc3Npc3RhbnQrMUBjbGluaXF1ZS5mciJ9.AIVU_tnOLfNEA_kBuQyOidOHSQFI6B_xI6sh2CdqoUFtnpjB-y1UnU6X_z9ctc6Pz00TIQybSaphPwC6rz_iB_DkGxjYysJE9I7blEfPdNmvVMiLzd2RIEXK84kh_WMvHFoyVFPGWKkX1-A_05rDNvcTX6OstFVcI-Vpb4OpJGWCa5crsFH425qMBxq476snVV6XX-NM4y-DMxnoIXF_5LkuXUW0Gv14qXLRuVRx-LQshazI87hAFqDUKMeNHToYSL7i78amqKbS1l7ce0y9Vi-IHv3xeLe4viQfoKtKcdIBbLU9zp4OsfyTuF7Y1ltbwAojS26jJndmVA9q3tyJrcwIZYXwAJdNUHKzzBYoqfxXzXSM84VYZnlslQgBHdx0GlX5raLkBUnJ0j_NKlTHdGz22NPEuI0Hw3JooFPwn2alvuufVmkJRiK6tDMYK1f-zgN3LRgM4mO8Q0P-PfdQHlavstUvTDI4gdThl_OfbHFGfqPlcsNwUrH_m5EFDkD2GbQgIYlRD4rQlq9ZvjTRACk2WTKbHaeX8uEJYGRTuEHV_Yds7PAdfQlapXGwcW-PENvL8c5KB6gHxchb9MarkHTe-WpE526Is_KhdNvyJyyuWU2eKn08uATxdP1v26Z_hJbH9Coq6NRyxYee6mQZipJ3xVerPCSW8fFxte6w0OY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Rex\",\n  \"species\": \"Chien\",\n  \"birthDate\": \"2019-05-15\",\n  \"owner\": \"/api/clients/1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/animals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"animals"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
