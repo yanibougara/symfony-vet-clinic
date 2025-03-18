@@ -20,5 +20,17 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    # Configuration explicite pour AppointmentProcessor
+    App\State\AppointmentProcessor:
+        arguments:
+            $persistProcessor: '@api_platform.doctrine.orm.state.persist_processor'
+            $security: '@Symfony\Bundle\SecurityBundle\Security'
+
+    # Configuration pour AppointmentListener
+    App\EventListener\AppointmentListener:
+        tags:
+            - { name: 'doctrine.event_listener', event: 'prePersist' }
+            - { name: 'doctrine.event_listener', event: 'preUpdate' }
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

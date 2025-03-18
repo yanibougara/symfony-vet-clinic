@@ -1,0 +1,30 @@
+api_platform:
+    title: Veterinary Clinic API
+    version: 1.0.0
+    formats:
+        json: ['application/json']
+        jsonld: ['application/ld+json']
+        html: ['text/html']
+        multipart: ['multipart/form-data']
+    docs_formats:
+        jsonld: ['application/ld+json']
+        jsonopenapi: ['application/vnd.openapi+json']
+        html: ['text/html']
+    swagger:
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+        extra_properties:
+            standard_put: true
+        normalization_context:
+            skip_null_values: false
+            enable_max_depth: true
+    eager_loading:
+        max_joins: 100
+        fetch_partial: true
+        force_eager: false
